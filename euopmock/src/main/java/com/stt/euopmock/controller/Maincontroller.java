@@ -49,6 +49,9 @@ public class Maincontroller {
     	if (iopChannelId.equals( "01711165060") && iopOperationId.equals( "0171116512185")  && servNum.equals( "15862032301")) {
     		//咪咕视频 01711165060/0171116512185/15862032301
     	result="{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"0410000111004262609\",\"imei\":\"\",\"prov_id\":\"\"}}";
+    	}else if (iopChannelId.equals( "01711165060") && iopOperationId.equals("0171116512185")  && servNum.equals( "17305196292")){
+    		//咪咕视频 01711165060/0171116512185/17305196292
+    		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"0410000111004262610\",\"imei\":\"\",\"prov_id\":\"\"}}";
     	}else if (iopChannelId.equals( "01710210074") && iopOperationId.equals("017102108753")  && servNum.equals( "13427535800")){
     		//上海和你app
     		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"0410000111004262609\",\"imei\":\"\",\"prov_id\":\"\"}}";

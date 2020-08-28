@@ -1,3 +1,3 @@
 
 
-java -jar E:\tech\spring\SpringBoot\euopmock\target\euopmock-0.0.1-SNAPSHOT.jar
+java -jar E:\tech\git\repository\euopmock\target\euopmock-0.0.1-SNAPSHOT.jar
