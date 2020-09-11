@@ -1,0 +1,14 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:etog="http://etognetcontentfeedbackservice.iope.cmcc.com" xmlns:xsd="http://etognetcontentfeedbackservice.iope.cmcc.com/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <etog:e2GNetContentFeedbackServiceResponse>
+         <!--Optional:-->
+         <etog:return>
+            <!--Optional:-->
+            <xsd:resultCode>0</xsd:resultCode>
+            <!--Optional:-->
+            <xsd:resultDesc>ok</xsd:resultDesc>
+         </etog:return>
+      </etog:e2GNetContentFeedbackServiceResponse>
+   </soapenv:Body>
+</soapenv:Envelope>
