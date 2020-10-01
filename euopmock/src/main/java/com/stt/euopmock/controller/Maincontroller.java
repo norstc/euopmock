@@ -11,12 +11,14 @@ import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.stt.euopmock.model.City;
 import com.stt.euopmock.service.ICityService;
 
 import java.io.*;
+import java.net.URLDecoder;
 
 import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
@@ -72,6 +74,36 @@ public class Maincontroller {
     	
 		return result;
     }
+    
+    //模拟一级iop批量查询
+   // #呼池
+   // batch_iop_url_4=http://192.168.1.200:9999/4/recommendService/services/tagqueryiops
+    //#VGOP
+    //batch_iop_url_41=http://192.168.1.200:9999/41/recommendService/services/tagqueryiops
+    // http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/08003/15862032301
+    @GetMapping(path="/{iopLocation}/recommendService/services/tagqueryiops/{channelCode}/{batchId}/{servNum}")
+    public String getIOPActivity(@PathVariable String iopLocation,@PathVariable String channelCode, @PathVariable String batchId,@PathVariable String servNum) {
+    	LOG.info("value is " +iopLocation + "/recommendService/services/tagquery/"+ channelCode+'/'+batchId+'/'+servNum);
+    	String result ="";
+    	if(iopLocation.equals("4")) {
+    		LOG.info("requst is go to 4,呼池");
+    	}else {
+    		LOG.info("request is go to 41, VGOP");
+    	}
+    	if (channelCode.equals( "01705161003") && batchId.equals( "008003")  && servNum.equals( "15862032301")) {
+    		// 1170516100012 	首页-主广告1号位 	其它 	一级手厅 	一级IOP系统 	一级营销活动-一级手厅-营销活动-3257号位 	017051613257 	已上报 	1/0 
+    		// 1170516100007 	窗帘广告位置1 	其它 	一级手厅 	一级IOP系统 	一级营销活动-一级手厅-营销活动-4065号位 	017051614065 
+    		//一级手厅 01705161003/008003/15862032301
+    		//查询成功
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051613257\",\"products\":\"2025|3000|5015|5011|5012|5019\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051614065\",\"products\":\"2025|3000|5015|5011|5012|5019\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}else {
+    		// 查询成功，没有活动
+    		result="{\"resultCode\":\"0001\",\"productInfo\":{\"products\":\"\",\"imei\":\"\",\"prov_id\":\"\"}}";
+    	}
+    	
+		return result;
+    }
+   
     
     //模拟省iop实时查询返回
     @PostMapping(path="/{provIOPId}/iopRecommendInfo",consumes="application/json",produces="application/json")
@@ -135,14 +167,24 @@ public class Maincontroller {
     }
     
     //模拟审核反馈
+    //一级iop是webservice接口
+    //省iop是http+json
     //iop_url_97004=http://192.168.1.200:9999/1001/auditFeedBack
     @PostMapping(path="/{iopId}/auditFeedBack")
-    public String getIOPAuditFeedBack(@PathVariable String iopId) {
+    public String getIOPAuditFeedBack(@PathVariable String iopId, @RequestBody	byte[] data) {
     	if (iopId == null || iopId.isEmpty()) {
     		return "iopId is a must";
     	}
     	String result="";
     	LOG.info("request is /"+iopId+"/auditFeedBack" );
+    	try {
+			String rb = URLDecoder.decode(new String(data,"utf8"),"utf8");
+			LOG.info("request data is :" + rb);
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+    	
     	if (iopId.equals("1001")) {
     		//一级IOP
     		//直接从文件中读取
@@ -159,7 +201,10 @@ public class Maincontroller {
     		//result="{\"result\":{\"conversationId\":\"1540545125485a0\",\"responseCode\":\"0000\",\"productInfo\":{\"activityId\":\"210010000018214\",\"subActivityId\":\"210000000182141000003\",\"provId\":\"100\"}}}";
     	}else if(iopId.equals("2100")) {
     		//北京IOP
-    		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
+    		result="{\"result\":{\"message\":\"操作成功\",\"success\":true,\"conversationId\":\"2020091821000012888888\"}}";
+    	}else if(iopId.equals("2791")) {
+    		//江西IOP  2791
+    		result="{\"result\":{\"message\":\"操作成功\",\"success\":true,\"conversationId\":\"2020091827910012888888\"}}";
     	}else if(iopId.equals("iop_url_97004")) {
     		//一级IOP iop_url_97004
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
