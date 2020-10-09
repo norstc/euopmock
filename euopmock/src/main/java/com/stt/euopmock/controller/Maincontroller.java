@@ -106,6 +106,7 @@ public class Maincontroller {
    
     
     //模拟省iop实时查询返回
+    // http://192.168.1.200:9999/2100/iopRecommendInfo
     @PostMapping(path="/{provIOPId}/iopRecommendInfo",consumes="application/json",produces="application/json")
     public String getProvIOPActivity(@PathVariable String provIOPId) {
     	if (provIOPId == null || provIOPId.isEmpty()) {
