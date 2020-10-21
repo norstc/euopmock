@@ -136,7 +136,7 @@ public class Maincontroller {
     	LOG.info("request is /1000003/op");
     	String result="";
     	//直接从文件中读取
-    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20200907.js");
+    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20201021.js");
     	
     	try {
 			Reader reader = new InputStreamReader(resource.getInputStream(),"UTF-8");
