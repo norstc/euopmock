@@ -131,12 +131,14 @@ public class Maincontroller {
     }
     
     //模拟手厅运营位接口, 读取数据文件，将其内容返回
+    // http://192.168.1.200:9999/1000003/op
+    // TODO 用curl手动能拿到结果，但是程序无法解析，待确认
     @PostMapping(path="/1000003/op",consumes="application/json", produces="application/json")
     public String get1000003Op() {
     	LOG.info("request is /1000003/op");
     	String result="";
     	//直接从文件中读取
-    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20200907.js");
+    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20201021.json");
     	
     	try {
 			Reader reader = new InputStreamReader(resource.getInputStream(),"UTF-8");
