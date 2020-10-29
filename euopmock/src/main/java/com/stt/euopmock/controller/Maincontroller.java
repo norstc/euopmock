@@ -138,7 +138,8 @@ public class Maincontroller {
     	LOG.info("request is /1000003/op");
     	String result="";
     	//直接从文件中读取
-    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20201021.json");
+    	//20201029：运营位信息修改物料字数限制
+    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20201026_2.json");
     	
     	try {
 			Reader reader = new InputStreamReader(resource.getInputStream(),"UTF-8");
@@ -151,7 +152,7 @@ public class Maincontroller {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
-    	
+    	LOG.info("result is : " + result);
     	return result;
     }
     
