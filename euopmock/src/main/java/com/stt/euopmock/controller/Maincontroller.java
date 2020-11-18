@@ -68,7 +68,11 @@ public class Maincontroller {
     	}else if (iopChannelId.equals( "01710210074") && iopOperationId.equals("017102108753")  && servNum.equals( "13427535800")){
     		//上海和你app
     		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"0410000111004262609\",\"imei\":\"\",\"prov_id\":\"\"}}";
-    	}else {
+    	}else if (iopChannelId.equals("01705161003")) {
+    		// 1000003
+    		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"20201020015\",\"imei\":\"\",\"prov_id\":\"\"}}";
+    	}
+    	else {
     		result="{\"resultCode\":\"0001\",\"productInfo\":{\"products\":\"\",\"imei\":\"\",\"prov_id\":\"\"}}";
     	}
     	
