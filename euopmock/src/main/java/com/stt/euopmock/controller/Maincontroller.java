@@ -100,7 +100,12 @@ public class Maincontroller {
     		//一级手厅 01705161003/008003/15862032301
     		//查询成功
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051613257\",\"products\":\"20201015002\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051614065\",\"products\":\"20201023004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
-    	}else {
+    	}else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
+    		//流量中心
+    		//http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161091/091001/18706716196
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"20201201001017051610910170516112785\",\"tag_id\":\"0170516112785\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112793\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112801\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}
+    	else {
     		// 查询成功，没有活动
     		result="{\"resultCode\":\"0001\",\"productInfo\":{\"products\":\"\",\"imei\":\"\",\"prov_id\":\"\"}}";
     	}
