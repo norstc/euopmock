@@ -131,7 +131,7 @@ public class Maincontroller {
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
     	}else if(provIOPId.equals("2891")){
     		//西藏IOP
-    		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
+    		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"289120201223001\",\"subActivityId\":\"28912020122300110000310170516112849\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
     	}else if(provIOPId.equals("2791")){
     		//江西IOP
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"279120200813144034027\",\"subActivityId\":\"2791202008131440340272791001\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
