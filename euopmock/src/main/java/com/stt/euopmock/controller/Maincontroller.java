@@ -125,7 +125,7 @@ public class Maincontroller {
     	LOG.info("request is /"+provIOPId+"/iopRecommendInfo" );
     	if (provIOPId.equals("2100")) {
     		//北京IOP
-    		result="{\"result\":{\"conversationId\":\"1540545125485a0\",\"responseCode\":\"0000\",\"productInfo\":{\"activityId\":\"210010000018214\",\"subActivityId\":\"210000000182141000003\",\"provId\":\"100\"}}}";
+    		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
     	}else if(provIOPId.equals("2101")) {
     		//北京IOP2
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
@@ -134,7 +134,7 @@ public class Maincontroller {
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
     	}else if(provIOPId.equals("2791")){
     		//江西IOP
-    		result="{\"result\":{\"conversationId\":\"1540545125485a0\",\"responseCode\":\"0000\",\"productInfo\":{\"activityId\":\"279120200813144034027\",\"subActivityId\":\"2791202008131440340272791001\",\"provId\":\"791\"}}}";
+    		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"279120200813144034027\",\"subActivityId\":\"2791202008131440340272791001\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"responseCode\":\"0000\"}}";
     	}else {
     		//没有查到省IOP
     		result="{\"result\":{\"conversationId\":\"1540545125485a0\",\"responseCode\":\"0001\"}}";
