@@ -84,7 +84,7 @@ public class Maincontroller {
    // batch_iop_url_4=http://192.168.1.200:9999/4/recommendService/services/tagqueryiops
     //#VGOP
     //batch_iop_url_41=http://192.168.1.200:9999/41/recommendService/services/tagqueryiops
-    // http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/08003/15862032301
+    // http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/008003/15862032301
     @GetMapping(path="/{iopLocation}/recommendService/services/tagqueryiops/{channelCode}/{batchId}/{servNum}")
     public String getIOPActivity(@PathVariable String iopLocation,@PathVariable String channelCode, @PathVariable String batchId,@PathVariable String servNum) {
     	LOG.info("value is " +iopLocation + "/recommendService/services/tagquery/"+ channelCode+'/'+batchId+'/'+servNum);
