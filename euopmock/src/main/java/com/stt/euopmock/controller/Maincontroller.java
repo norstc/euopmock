@@ -91,15 +91,25 @@ public class Maincontroller {
     	String result ="";
     	if(iopLocation.equals("4")) {
     		LOG.info("requst is go to 4,呼池");
+    		
     	}else {
     		LOG.info("request is go to 41, VGOP");
     	}
+    	LOG.info("channelCode is: " + channelCode);
+		LOG.info("batchId is: " + batchId);
+		LOG.info("servNum is: " + servNum);
+		LOG.info(channelCode+"/" + batchId + "/" + servNum);
+		
     	if (channelCode.equals( "01705161003") && batchId.equals( "008003")  && servNum.equals( "15862032301")) {
     		// 1170516100012 	首页-主广告1号位 	其它 	一级手厅 	一级IOP系统 	一级营销活动-一级手厅-营销活动-3257号位 	017051613257 	已上报 	1/0 
     		// 1170516100007 	窗帘广告位置1 	其它 	一级手厅 	一级IOP系统 	一级营销活动-一级手厅-营销活动-4065号位 	017051614065 
     		//一级手厅 01705161003/008003/15862032301
     		//查询成功
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051613257\",\"products\":\"20201015002\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051614065\",\"products\":\"20201023004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}else if(channelCode.equals( "01705161003") && batchId.equals( "008006")  && servNum.equals( "15967123616"))  {
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051616425\",\"products\":\"20210112001\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051616457\",\"products\":\"20210112002\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}else if(channelCode.equals( "01705161003") && batchId.equals( "017051616425_017051616457")  && servNum.equals( "15967123616"))  {
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051616425\",\"products\":\"20210112003\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051616457\",\"products\":\"20210112004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
     	}else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
     		//流量中心
     		//http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161091/091001/18706716196
