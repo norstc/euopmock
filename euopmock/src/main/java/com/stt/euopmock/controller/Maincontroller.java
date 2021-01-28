@@ -123,6 +123,26 @@ public class Maincontroller {
 		return result;
     }
    
+    //模拟省iop批量实时接口查询
+    //湖北省iop到一级卡券中心的活动没有展示，一级卡券中心调用euop的直通批量查询接口，返回9999
+    //直接调用湖北省的批量查询接口可以看到返回
+    // http://192.168.1.200:9999/2270/iopBatchActivityQuery
+    @PostMapping(path="/{provIOPId}/iopBatchActivityQuery", consumes="application/json", produces="application/json")
+    public String getProvIOPBatchActivity(@PathVariable String provIOPId) {
+    	if(provIOPId == null || provIOPId.isEmpty()) {
+    		return "provIOPId is must";
+    	}
+    	String result="";
+    	LOG.info("request is /" + provIOPId + "/iopBatchActivityQuery");
+    	if(provIOPId.equals("2270")) {
+    		//湖北IOP
+    		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705272055446286337\",\"tagId\":\"017101617217\",\"subActivityId\":\"227052720554462863371000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0000\"}}";
+    	}else {
+    		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705272055446286337\",\"tagId\":\"017101617217\",\"subActivityId\":\"227052720554462863371000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0001\"}}";
+    	}
+    	return result;
+    }
+    
     
     //模拟省iop实时查询返回
     // http://192.168.1.200:9999/2100/iopRecommendInfo
