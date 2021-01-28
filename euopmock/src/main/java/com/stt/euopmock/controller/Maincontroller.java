@@ -128,12 +128,19 @@ public class Maincontroller {
     //直接调用湖北省的批量查询接口可以看到返回
     // http://192.168.1.200:9999/2270/iopBatchActivityQuery
     @PostMapping(path="/{provIOPId}/iopBatchActivityQuery", consumes="application/json", produces="application/json")
-    public String getProvIOPBatchActivity(@PathVariable String provIOPId) {
+    public String getProvIOPBatchActivity(@PathVariable String provIOPId, @RequestBody byte[] data) {
     	if(provIOPId == null || provIOPId.isEmpty()) {
     		return "provIOPId is must";
     	}
     	String result="";
     	LOG.info("request is /" + provIOPId + "/iopBatchActivityQuery");
+    	try {
+			String rb = URLDecoder.decode(new String(data,"utf8"),"utf8");
+			LOG.info("request data is :" + rb);
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
     	if(provIOPId.equals("2270")) {
     		//湖北IOP
     		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705065043461386241\",\"tagId\":\"017101617217\",\"subActivityId\":\"227050650434613862411000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0000\"}}";
