@@ -154,12 +154,19 @@ public class Maincontroller {
     //模拟省iop实时查询返回
     // http://192.168.1.200:9999/2100/iopRecommendInfo
     @PostMapping(path="/{provIOPId}/iopRecommendInfo",consumes="application/json",produces="application/json")
-    public String getProvIOPActivity(@PathVariable String provIOPId) {
+    public String getProvIOPActivity(@PathVariable String provIOPId, @RequestBody byte[] data) {
     	if (provIOPId == null || provIOPId.isEmpty()) {
     		return "provIOPId is a must";
     	}
     	String result="";
     	LOG.info("request is /"+provIOPId+"/iopRecommendInfo" );
+    	try {
+			String rb = URLDecoder.decode(new String(data,"utf8"),"utf8");
+			LOG.info("request data is :" + rb);
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
     	if (provIOPId.equals("2100")) {
     		//北京IOP
     		result="{\"result\":{\"data\":{\"activityInfo\":{\"activityId\":\"210110000018214\",\"subActivityId\":\"2101100000182141000003\"}},\"conversationId\":\"2018111515501391504152399103722735802\",\"message\":\"处理成功\",\"response_code\":\"0000\"}}";
@@ -186,8 +193,15 @@ public class Maincontroller {
     // http://192.168.1.200:9999/1000003/op
     // TODO 用curl手动能拿到结果，但是程序无法解析，待确认
     @PostMapping(path="/1000003/op",consumes="application/json", produces="application/json")
-    public String get1000003Op() {
+    public String get1000003Op(@RequestBody byte[] data) {
     	LOG.info("request is /1000003/op");
+    	try {
+			String rb = URLDecoder.decode(new String(data,"utf8"),"utf8");
+			LOG.info("request data is :" + rb);
+		} catch (UnsupportedEncodingException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
     	String result="";
     	//直接从文件中读取
     	//20201029：运营位信息修改物料字数限制
