@@ -136,7 +136,7 @@ public class Maincontroller {
     	LOG.info("request is /" + provIOPId + "/iopBatchActivityQuery");
     	if(provIOPId.equals("2270")) {
     		//湖北IOP
-    		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705272055446286337\",\"tagId\":\"017101617217\",\"subActivityId\":\"227052720554462863371000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0000\"}}";
+    		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705065043461386241\",\"tagId\":\"017101617217\",\"subActivityId\":\"227050650434613862411000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0000\"}}";
     	}else {
     		result="{\"result\":{\"data\":{\"activityInfo\":[{\"activityId\":\"22705272055446286337\",\"tagId\":\"017101617217\",\"subActivityId\":\"227052720554462863371000026\"}]},\"conversationId\":\"2020112514265177447947\",\"responseCode\":\"0001\"}}";
     	}
