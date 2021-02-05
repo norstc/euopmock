@@ -80,11 +80,13 @@ public class Maincontroller {
     }
     
     //模拟一级iop批量查询
-   // #呼池
+   // #呼池,4，  使用运营位拼接出组id
    // batch_iop_url_4=http://192.168.1.200:9999/4/recommendService/services/tagqueryiops
-    //#VGOP
+    // curl http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/017051616425_017051616457/15967123616
+
+    //#VGOP，41， 使用组id查询
     //batch_iop_url_41=http://192.168.1.200:9999/41/recommendService/services/tagqueryiops
-    // http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/008003/15862032301
+    // curl http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161003/008003/15862032301
     @GetMapping(path="/{iopLocation}/recommendService/services/tagqueryiops/{channelCode}/{batchId}/{servNum}")
     public String getIOPActivity(@PathVariable String iopLocation,@PathVariable String channelCode, @PathVariable String batchId,@PathVariable String servNum) {
     	LOG.info("value is " +iopLocation + "/recommendService/services/tagquery/"+ channelCode+'/'+batchId+'/'+servNum);
@@ -107,10 +109,15 @@ public class Maincontroller {
     		//查询成功
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051613257\",\"products\":\"20201015002\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051614065\",\"products\":\"20201023004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
     	}else if(channelCode.equals( "01705161003") && batchId.equals( "008006")  && servNum.equals( "15967123616"))  {
+    		//手厅，查vgop， 41， 使用组编码
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051616425\",\"products\":\"20210112001\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051616457\",\"products\":\"20210112002\",\"imei\":\"\",\"prov_id\":\"\"}]}";
     	}else if(channelCode.equals( "01705161003") && batchId.equals( "017051616425_017051616457")  && servNum.equals( "15967123616"))  {
+    		//手厅， 查呼池，4， 使用运营位编码拼接,两个位置 017051616425_017051616457
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051616425\",\"products\":\"20210112003\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051616457\",\"products\":\"20210112004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
-    	}else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
+    	}else if(channelCode.equals( "01705161003") && batchId.equals( "017051614065")  && servNum.equals( "15967123616"))  {
+    		//手厅， 查呼池，4， 使用运营位编码拼接，只有一个位置，017051614065
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"17520210205001\",\"tag_id\":\"017051614065\",\"products\":\"010203018888\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}    	else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
     		//流量中心
     		//http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161091/091001/18706716196
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"20201201001017051610910170516112785\",\"tag_id\":\"0170516112785\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112793\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112801\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"}]}";
