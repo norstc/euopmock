@@ -206,7 +206,7 @@ public class Maincontroller {
     	//直接从文件中读取
     	//20201029：运营位信息修改物料字数限制
     	//20210205: 手厅触点模拟角标
-    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20210205.json");
+    	Resource resource=resourceLoader.getResource("classpath:testdata/08_20210205_add_jb.json");
     	
     	try {
 			Reader reader = new InputStreamReader(resource.getInputStream(),"UTF-8");
