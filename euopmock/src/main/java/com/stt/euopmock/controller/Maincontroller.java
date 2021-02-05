@@ -116,8 +116,8 @@ public class Maincontroller {
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"3242342543\",\"tag_id\":\"017051616425\",\"products\":\"20210112003\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"017051616457\",\"products\":\"20210112004\",\"imei\":\"\",\"prov_id\":\"\"}]}";
     	}else if(channelCode.equals( "01705161003") && batchId.equals( "017051614065")  && servNum.equals( "15967123616"))  {
     		//手厅， 查呼池，4， 使用运营位编码拼接，只有一个位置，017051614065
-    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"17520210205001\",\"tag_id\":\"017051614065\",\"products\":\"010203018888\",\"imei\":\"\",\"prov_id\":\"\"}]}";
-    	}    	else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"175202102050011000003017051614065\",\"tag_id\":\"017051614065\",\"products\":\"010203018888\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
     		//流量中心
     		//http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161091/091001/18706716196
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"20201201001017051610910170516112785\",\"tag_id\":\"0170516112785\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112793\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"},{\"active_id\":\"42243551\",\"tag_id\":\"0170516112801\",\"products\":\"20201201p1\",\"imei\":\"\",\"prov_id\":\"\"}]}";
