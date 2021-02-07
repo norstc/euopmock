@@ -70,7 +70,7 @@ public class Maincontroller {
     		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"0410000111004262609\",\"imei\":\"\",\"prov_id\":\"\"}}";
     	}else if (iopChannelId.equals("01705161003")) {
     		// 1000003
-    		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"20201020015\",\"imei\":\"\",\"prov_id\":\"\"}}";
+    		result = "{\"resultCode\":\"0000\",\"productInfo\":{\"products\":\"17520210205001\",\"imei\":\"\",\"prov_id\":\"\"}}";
     	}
     	else {
     		result="{\"resultCode\":\"0001\",\"productInfo\":{\"products\":\"\",\"imei\":\"\",\"prov_id\":\"\"}}";
