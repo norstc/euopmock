@@ -39,11 +39,11 @@ public class ProvinceIopSimActivityController {
 		String result = "";
 		if(iopId.equals("2200") && process.equals("1") && version.equals("1.4.8") && network.equals("dmz")) {
 			// get sftp info
-			String CONTENT_FTP_SERVER1 = ConfUtil.getConfUtil("config/sftp.properties").getProperties().getProperty("CONTENT_FTP_SERVER1");
-			String CONTENT_FTP_PORT1 = ConfUtil.getConfUtil("config/sftp.properties").getProperties().getProperty("CONTENT_FTP_PORT1");
+			String CONTENT_FTP_SERVER1 = ConfUtil.getConfUtil("classpath:config/sftp.properties").getProperties().getProperty("CONTENT_FTP_SERVER1");
+			String CONTENT_FTP_PORT1 = ConfUtil.getConfUtil("classpath:config/sftp.properties").getProperties().getProperty("CONTENT_FTP_PORT1");
 			
-			String CONTENT_FTP_USER1 = ConfUtil.getConfUtil("config/sftp.properties").getProperties().getProperty("CONTENT_FTP_USER1");
-			String CONTENT_FTP_PASSWORD1 = ConfUtil.getConfUtil("config/sftp.properties").getProperties().getProperty("CONTENT_FTP_PASSWORD1");
+			String CONTENT_FTP_USER1 = ConfUtil.getConfUtil("classpath:config/sftp.properties").getProperties().getProperty("CONTENT_FTP_USER1");
+			String CONTENT_FTP_PASSWORD1 = ConfUtil.getConfUtil("classpath:config/sftp.properties").getProperties().getProperty("CONTENT_FTP_PASSWORD1");
 			LOG.info("CONTENT_FTP_SERVER1:"+CONTENT_FTP_SERVER1);
 			LOG.info("CONTENT_FTP_PORT1:" + CONTENT_FTP_PORT1);
 			LOG.info("CONTENT_FTP_USER1:" + CONTENT_FTP_USER1);

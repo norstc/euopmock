@@ -29,7 +29,8 @@ public class ConfUtil {
 		String config_file_path =config_file;//"config/conf_channel.properties";
 		properties = new Properties();
 		try {
-			InputStream config_is = new FileInputStream(config_file_path);
+			//可以将配置文件放在resources目录下
+			InputStream config_is = getClass().getClassLoader().getResourceAsStream(config_file_path);
 			properties.load(config_is);
 			config_is.close();
 		}catch (FileNotFoundException f) {
