@@ -117,6 +117,10 @@ public class Maincontroller {
     	}else if(channelCode.equals( "01705161003") && batchId.equals( "017051614065")  && servNum.equals( "15967123616"))  {
     		//手厅， 查呼池，4， 使用运营位编码拼接，只有一个位置，017051614065
     		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"175202102050011000003017051614065\",\"tag_id\":\"017051614065\",\"products\":\"010203018888\",\"imei\":\"\",\"prov_id\":\"\"}]}";
+    	}else if(channelCode.equals( "01705161003") && batchId.equals( "0170516113393")  && servNum.equals( "15967123616"))  {
+    		//手厅， 查呼池，4， 使用运营位编码拼接，只有一个位置，0170516113393
+    		//角标测试
+    		result="{\"resultCode\":\"0000\",\"productInfos\":[{\"active_id\":\"181202102230010170516113393\",\"tag_id\":\"0170516113393\",\"products\":\"0170516113393001\",\"imei\":\"\",\"prov_id\":\"\"}]}";
     	}else if (channelCode.equals( "01705161091") && batchId.equals( "091001")  && servNum.equals( "18706716196")){
     		//流量中心
     		//http://192.168.1.200:9999/4/recommendService/services/tagqueryiops/01705161091/091001/18706716196
